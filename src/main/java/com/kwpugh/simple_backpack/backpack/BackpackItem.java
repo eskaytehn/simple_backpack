@@ -25,7 +25,8 @@ public class BackpackItem extends Item
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand)
     {
-        if(player.world.isClient) return TypedActionResult.pass(player.getStackInHand(hand));
+        World playerWorld = player.getWorld();
+        if(playerWorld.isClient) return TypedActionResult.pass(player.getStackInHand(hand));
 
         player.setCurrentHand(hand);
         ItemStack stack = player.getStackInHand(hand);

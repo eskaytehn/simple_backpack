@@ -105,7 +105,7 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
     }
 
     public boolean matches(Recipe<? super CraftingInventory> recipe) {
-        return recipe.matches(this.input, this.player.world);
+        return recipe.matches(this.input, this.player.getWorld());
     }
 
     public void close(PlayerEntity player) {
