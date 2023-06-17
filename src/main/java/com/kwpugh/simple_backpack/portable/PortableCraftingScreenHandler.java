@@ -79,7 +79,7 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
             if (optional.isPresent()) {
                 CraftingRecipe craftingRecipe = (CraftingRecipe)optional.get();
                 if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, craftingRecipe)) {
-                    itemStack = craftingRecipe.craft(craftingInventory);
+                    itemStack = craftingRecipe.craft(craftingInventory, world.getRegistryManager());
                 }
             }
 
@@ -109,7 +109,6 @@ public class PortableCraftingScreenHandler extends AbstractRecipeScreenHandler<C
     }
 
     public void close(PlayerEntity player) {
-        super.close(player);
         this.context.run((world, pos) -> {
             this.dropInventory(player, this.input);
         });
