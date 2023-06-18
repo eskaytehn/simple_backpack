@@ -17,6 +17,7 @@ public class BackpackClient implements ClientModInitializer
     {
         HandledScreens.register(Backpack.BACKPACK_SCREEN_HANDLER, GenericContainerScreen::new);
         HandledScreens.register(Backpack.VOID_PACK_SCREEN_HANDLER, GenericContainerScreen::new);
+        HandledScreens.register(Backpack.SHULKER_PACK_SCREEN_HANDLER, GenericContainerScreen::new);
         HandledScreens.register(Backpack.PORTABLE_CRAFTING_SCREEN_HANDLER, PortableCraftingScreen::new);
 
         ModelPredicateProviderRegistry.register(Backpack.SIMPLE_BUNDLE, new Identifier("filled"), (itemStack, clientWorld, livingEntity, i) -> Backpack.SIMPLE_BUNDLE.getItemBarStep(itemStack));

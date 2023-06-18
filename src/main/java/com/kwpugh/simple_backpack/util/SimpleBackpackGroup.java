@@ -22,6 +22,7 @@ public class SimpleBackpackGroup
                 .icon(() -> new ItemStack(Backpack.BACKPACK))
                 .entries((context, entries) -> {
                     entries.add(Backpack.BACKPACK);
+                    entries.add(Backpack.SHULKER_PACK);
                     entries.add(Backpack.VOID_PACK);
                     entries.add(Backpack.ENDER_PACK);
                     entries.add(Backpack.SIMPLE_BUNDLE);

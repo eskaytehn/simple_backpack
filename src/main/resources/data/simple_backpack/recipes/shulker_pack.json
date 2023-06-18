@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": ["CAC", "ABA", "CAC"],
+	"key": {
+		"A": {
+			"item": "minecraft:iron_ingot"
+		},
+		"B": {
+			"tag": "c:shulker_box"
+		},
+		"C": {
+			"tag": "minecraft:wool"
+		}
+	},
+	"result": {
+		"item": "simple_backpack:shulker_pack",
+		"count": 1
+	}
+}
