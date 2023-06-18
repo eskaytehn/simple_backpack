@@ -26,8 +26,8 @@ public class VoidpackScreenHandler extends GenericContainerScreenHandler
 
     private final Inventory inventory;
     private final PlayerInventory playerInventory;
-    public final int inventoryWidth = 9;
-    public final int inventoryHeight = 6;
+    public final int inventoryWidth = 3;
+    public final int inventoryHeight = 3;
 
     static
     {
@@ -40,7 +40,7 @@ public class VoidpackScreenHandler extends GenericContainerScreenHandler
 
     public VoidpackScreenHandler(int syncId, PlayerInventory playerInventory)
     {
-        this(syncId, playerInventory, new SimpleInventory(54));
+        this(syncId, playerInventory, new SimpleInventory(9));
     }
 
     public VoidpackScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory)
@@ -50,7 +50,7 @@ public class VoidpackScreenHandler extends GenericContainerScreenHandler
 
     protected VoidpackScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory)
     {
-        super(ScreenHandlerType.GENERIC_9X6, syncId, playerInventory, inventory, 6);
+        super(ScreenHandlerType.GENERIC_3X3, syncId, playerInventory, inventory, 3);
         this.type = type;
         this.inventory = inventory;
         this.playerInventory = playerInventory;
@@ -67,9 +67,9 @@ public class VoidpackScreenHandler extends GenericContainerScreenHandler
         int m;
         for(n = 0; n < this.inventoryHeight; ++n)
         {
-            for(m = 0; m < 9; ++m)
+            for(m = 0; m < 3; ++m)
             {
-                this.addSlot(new VoidpackSlot(inventory, m + n * 9, 8 + m * 18, 18 + n * 18));
+                this.addSlot(new VoidpackSlot(inventory, m + n * 3, 8 + m * 18, 18 + n * 18));
             }
         }
 

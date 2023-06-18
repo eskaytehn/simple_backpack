@@ -27,20 +27,20 @@ public class NewVoidpackScreenHandler extends ScreenHandler
     public static final Set<Item> SHULKER_BOXES;
 
     private NewVoidpackScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, int rows) {
-        this(type, syncId, playerInventory, new SimpleInventory(9 * rows), rows);
+        this(type, syncId, playerInventory, new SimpleInventory(3 * rows), rows);
     }
 
-    public static NewVoidpackScreenHandler createGeneric9x6(int syncId, PlayerInventory playerInventory) {
-        return new NewVoidpackScreenHandler(ScreenHandlerType.GENERIC_9X6, syncId, playerInventory, 6);
+    public static NewVoidpackScreenHandler createGeneric3x3(int syncId, PlayerInventory playerInventory) {
+        return new NewVoidpackScreenHandler(ScreenHandlerType.GENERIC_3X3, syncId, playerInventory, 3);
     }
 
-    public static NewVoidpackScreenHandler createGeneric9x6(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        return new NewVoidpackScreenHandler(ScreenHandlerType.GENERIC_9X6, syncId, playerInventory, inventory, 6);
+    public static NewVoidpackScreenHandler createGeneric3x3(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+        return new NewVoidpackScreenHandler(ScreenHandlerType.GENERIC_3X3, syncId, playerInventory, inventory, 3);
     }
 
     public NewVoidpackScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory, int rows) {
         super(type, syncId);
-        checkSize(inventory, rows * 9);
+        checkSize(inventory, rows * 3);
         this.inventory = inventory;
         this.rows = rows;
         inventory.onOpen(playerInventory.player);
@@ -49,8 +49,8 @@ public class NewVoidpackScreenHandler extends ScreenHandler
         int j;
         int k;
         for(j = 0; j < this.rows; ++j) {
-            for(k = 0; k < 9; ++k) {
-                this.addSlot(new VoidpackSlot(inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+            for(k = 0; k < 3; ++k) {
+                this.addSlot(new VoidpackSlot(inventory, k + j * 3, 8 + k * 18, 18 + j * 18));
             }
         }
 
@@ -136,11 +136,11 @@ public class NewVoidpackScreenHandler extends ScreenHandler
         if (slot != null && slot.hasStack()) {
             ItemStack itemStack2 = slot.getStack();
             itemStack = itemStack2.copy();
-            if (index < this.rows * 9) {
-                if (!this.insertItem(itemStack2, this.rows * 9, this.slots.size(), true)) {
+            if (index < this.rows * 3) {
+                if (!this.insertItem(itemStack2, this.rows * 3, this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.insertItem(itemStack2, 0, this.rows * 9, false)) {
+            } else if (!this.insertItem(itemStack2, 0, this.rows * 3, false)) {
                 return ItemStack.EMPTY;
             }
 

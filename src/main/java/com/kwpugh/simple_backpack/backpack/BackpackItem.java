@@ -38,6 +38,6 @@ public class BackpackItem extends Item
     private NamedScreenHandlerFactory createScreenHandlerFactory(ItemStack stack)
     {
         return new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) ->
-                NewBackpackScreenHandler.createGeneric9x6(i, playerInventory, new BackpackInventory(stack)), stack.getName());
+                NewBackpackScreenHandler.createGeneric3x3(i, playerInventory, new BackpackInventory(stack)), stack.getName());
     }
 }

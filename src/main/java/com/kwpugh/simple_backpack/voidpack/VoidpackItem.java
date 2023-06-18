@@ -40,7 +40,7 @@ public class VoidpackItem extends Item
 //                new VoidpackScreenHandler(syncId, inventory, new VoidpackInventory(stack)), stack.getName());
 
         return new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) ->
-                NewVoidpackScreenHandler.createGeneric9x6(i, playerInventory, new VoidpackInventory(stack)), stack.getName());
+                NewVoidpackScreenHandler.createGeneric3x3(i, playerInventory, new VoidpackInventory(stack)), stack.getName());
 
     }
 }

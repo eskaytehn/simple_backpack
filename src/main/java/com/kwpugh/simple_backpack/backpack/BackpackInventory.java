@@ -9,7 +9,7 @@ import net.minecraft.util.collection.DefaultedList;
 final class BackpackInventory implements ImplementedInventory
 {
     private final ItemStack stack;
-    private final DefaultedList<ItemStack> items = DefaultedList.ofSize(54, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> items = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     BackpackInventory(ItemStack stack)
     {
